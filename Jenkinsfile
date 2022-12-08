@@ -2,18 +2,18 @@ pipeline {
   agent any
   environment {
     PIPELINE_USER_CREDENTIAL_ID = 'aws-access'
-    SAM_TEMPLATE = 'template.yaml'
+    SAM_TEMPLATE = 'sam-api-app/template.yaml'
     MAIN_BRANCH = 'main'
-    TESTING_STACK_NAME = 'sa-api-jen'
-    TESTING_PIPELINE_EXECUTION_ROLE = 'y'
-    TESTING_CLOUDFORMATION_EXECUTION_ROLE = 'y'
-    TESTING_ARTIFACTS_BUCKET = 'y'
+    TESTING_STACK_NAME = 'sam-app-api-jen'
+    TESTING_PIPELINE_EXECUTION_ROLE = 'arn:aws:iam::611350661068:role/aws-sam-cli-managed-jen-pipe-PipelineExecutionRole-1DJJ3IBC8EKJ7'
+    TESTING_CLOUDFORMATION_EXECUTION_ROLE = 'arn:aws:iam::611350661068:role/aws-sam-cli-managed-jen-p-CloudFormationExecutionR-1KGN9DBS7TBQV'
+    TESTING_ARTIFACTS_BUCKET = 'aws-sam-cli-managed-jen-pipeline-artifactsbucket-ihqp7qnnd7gl'
     // If there are functions with "Image" PackageType in your template,
     // uncomment the line below and add "--image-repository ${TESTING_IMAGE_REPOSITORY}" to
     // testing "sam package" and "sam deploy" commands.
     // TESTING_IMAGE_REPOSITORY = '0123456789.dkr.ecr.region.amazonaws.com/repository-name'
-    TESTING_REGION = 'us-east-1'
-    PROD_STACK_NAME = 'sa-api-pro'
+    TESTING_REGION = 'us-west-1'
+    PROD_STACK_NAME = 'sam-app-api-pro'
     PROD_PIPELINE_EXECUTION_ROLE = 'arn:aws:iam::611350661068:role/aws-sam-cli-managed-pro-pipe-PipelineExecutionRole-F0COVLUCXHLI'
     PROD_CLOUDFORMATION_EXECUTION_ROLE = 'arn:aws:iam::611350661068:role/aws-sam-cli-managed-pro-p-CloudFormationExecutionR-AWM23F3RJOZW'
     PROD_ARTIFACTS_BUCKET = 'aws-sam-cli-managed-pro-pipeline-artifactsbucket-78bx1cie4zsn'
