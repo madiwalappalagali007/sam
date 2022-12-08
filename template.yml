@@ -12,3 +12,4 @@ Resources:
           Properties:
             Path: /
             Method: GET
+            //hi
